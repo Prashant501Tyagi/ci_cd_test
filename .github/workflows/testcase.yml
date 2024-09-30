@@ -1,4 +1,4 @@
-name: GitHub_action_demo
+name: GitHub Actions Demo
 
 on:
   push:
@@ -25,5 +25,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
-        run: pytest
+      - name: Debug info
+        run: |
+          pwd
+          ls -R
+          python --version
+          pip list
+
+      - name: Run tests with verbose output
+        run: |
+          python -m pytest -v
